@@ -1,0 +1,73 @@
+/* Text */
+/* Backgrounds */
+.main-container {
+  width: 20%;
+  min-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.qr-container {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 20px;
+}
+
+.qr-container img {
+  width: 100%;
+}
+
+.button-container {
+  margin-top: 20px;
+  width: 40%;
+  min-width: 250px;
+}
+
+.button-container button {
+  width: 100%;
+  font-family: monospace;
+  color: #BABABA;
+  font-size: 28px;
+  background-color: #0a590a;
+  border-radius: 10px;
+  border: none;
+  min-height: 45px;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+
+.button-container button:hover {
+  box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
+  -webkit-box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
+  -moz-box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
+}
+
+.more-info {
+  width: 15%;
+  min-width: 200px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.more-info p {
+  margin-bottom: -5px;
+  transition-duration: 200ms;
+}
+
+.down-arrow {
+  transition-duration: 200ms;
+}
+
+.more-info:hover > p {
+  color: white;
+}
+
+.more-info:hover > .down-arrow {
+  transform: translateY(3px);
+  color: white;
+}

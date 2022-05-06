@@ -1,0 +1,31 @@
+/* Text */
+/* Backgrounds */
+.input-container {
+  width: 40%;
+  min-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28px;
+  margin-top: 50px;
+}
+
+.input-container input {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #30363D;
+  color: white;
+  font-family: monospace;
+  font-size: 28px;
+  outline: none;
+  transition-duration: 150ms;
+}
+
+.input-container input:focus {
+  border-color: #BABABA;
+}
+
+.input-container input:hover {
+  border-color: #BABABA;
+}

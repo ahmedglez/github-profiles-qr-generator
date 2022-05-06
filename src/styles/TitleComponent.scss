@@ -1,0 +1,15 @@
+@import './root.scss';
+
+.title-container {
+    min-width: 283px;
+    font-size: $title-size;
+    color: $title-color;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 423px) {
+
+    .title-container {
+        font-size: $title-size-reduced;
+    }
+}
