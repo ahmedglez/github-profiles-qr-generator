@@ -2,10 +2,10 @@ import React from 'react'
 import '../styles/TitleComponent.scss'
 
 
-const TitleComponent = (props) => {
+const TitleComponent = ({text}) => {
   return (
     <div className='title-container'>
-        <h1 className='title'>QR Generator for Github Profiles</h1>
+        <h1 className='title'>{text}</h1>
     </div>
   )
 }

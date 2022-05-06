@@ -11,6 +11,7 @@
 }
 
 .qr-container {
+    margin: 0 auto;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,6 +20,8 @@
 
 .qr-container img {
     width: 100%;
+    min-width: 390px;
+
 }
 
 .button-container{
@@ -69,4 +72,9 @@
     transform: translateY(3px);  
     color: white;
       
+}
+
+
+#error-message{
+    color: rgb(181, 12, 12);
 }

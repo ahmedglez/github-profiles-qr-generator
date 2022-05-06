@@ -1,13 +1,12 @@
-import React, {useContext} from 'react';
-import '../styles/InputComponent.scss'
+import React, { useContext } from 'react';
+import '../styles/InputComponent.scss';
 import AppContext from '../contexts/AppContext';
 
 const InputComponent = (props) => {
-
-	const {setSearchValue} = useContext(AppContext);
+	const { setSearchValue, setUser} = useContext(AppContext);
 	const handleChange = (event) => {
-		setSearchValue(event.target.value)	}
-
+		setSearchValue(event.target.value);
+	};
 
 	return (
 		<div className='input-container'>

@@ -5,11 +5,12 @@ import useGetQR from './useGetQR';
 
 const useGetUsers = () => {
 	const [user, setUser] = useState();
-	const [valid, setValid] = useState(user === undefined);
+	const [valid, setValid] = useState();
 	const [searchValue, setSearchValue] = useState();
 	const [code, setCode] = useState();
+	const [showInfo, setShowInfo] = useState(false);
 
-	const getCode = () => {
+	const getCode = () => {		
 		if (user !== undefined) {
 			// eslint-disable-next-line react-hooks/rules-of-hooks
 			setCode(useGetQR(user.html_url));
@@ -19,14 +20,29 @@ const useGetUsers = () => {
 	};
 
 	useEffect(getCode, [user]);
+	useEffect(getCode, [valid]);
+	useEffect(()=>{
+		if(searchValue===''){
+			setValid(true)
+			setUser(undefined)
+		}
+	},[searchValue])
+
 	const lookForUser = (username) => {
-		console.log(username);
 		const api = github_users + '/' + username;
-		console.log(api);
-		console.log(github_users);
-		async function getUser(username) {
-			const myUser = await axios(api);
-			setUser(myUser.data);
+		async function getUser() {
+			const response = await axios(api)
+				.then((response) => {
+					setUser(response.data);
+					if (response.request.status === 200) {
+						setValid(true);
+					} else if(response===undefined) {
+						setValid(false);
+					}
+				})
+				.catch((response) => {setValid(false)});
+
+			
 		}
 		getUser();
 	};
@@ -35,11 +51,14 @@ const useGetUsers = () => {
 		user,
 		setUser,
 		valid,
+		setValid,
 		lookForUser,
 		searchValue,
 		setSearchValue,
 		code,
 		getCode,
+		showInfo,
+		setShowInfo,
 	};
 };
 

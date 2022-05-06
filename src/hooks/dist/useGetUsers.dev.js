@@ -35,7 +35,7 @@ var useGetUsers = function useGetUsers() {
       user = _useState2[0],
       setUser = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(user === undefined),
+  var _useState3 = (0, _react.useState)(),
       _useState4 = _slicedToArray(_useState3, 2),
       valid = _useState4[0],
       setValid = _useState4[1];
@@ -50,6 +50,11 @@ var useGetUsers = function useGetUsers() {
       code = _useState8[0],
       setCode = _useState8[1];
 
+  var _useState9 = (0, _react.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      showInfo = _useState10[0],
+      setShowInfo = _useState10[1];
+
   var getCode = function getCode() {
     if (user !== undefined) {
       // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -60,27 +65,40 @@ var useGetUsers = function useGetUsers() {
   };
 
   (0, _react.useEffect)(getCode, [user]);
+  (0, _react.useEffect)(getCode, [valid]);
+  (0, _react.useEffect)(function () {
+    if (searchValue === '') {
+      setValid(true);
+      setUser(undefined);
+    }
+  }, [searchValue]);
 
   var lookForUser = function lookForUser(username) {
-    console.log(username);
     var api = _apis.github_users + '/' + username;
-    console.log(api);
-    console.log(_apis.github_users);
 
-    function getUser(username) {
-      var myUser;
+    function getUser() {
+      var response;
       return regeneratorRuntime.async(function getUser$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return regeneratorRuntime.awrap((0, _axios["default"])(api));
+              return regeneratorRuntime.awrap((0, _axios["default"])(api).then(function (response) {
+                setUser(response.data);
+
+                if (response.request.status === 200) {
+                  setValid(true);
+                } else if (response === undefined) {
+                  setValid(false);
+                }
+              })["catch"](function (response) {
+                setValid(false);
+              }));
 
             case 2:
-              myUser = _context.sent;
-              setUser(myUser.data);
+              response = _context.sent;
 
-            case 4:
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -95,11 +113,14 @@ var useGetUsers = function useGetUsers() {
     user: user,
     setUser: setUser,
     valid: valid,
+    setValid: setValid,
     lookForUser: lookForUser,
     searchValue: searchValue,
     setSearchValue: setSearchValue,
     code: code,
-    getCode: getCode
+    getCode: getCode,
+    showInfo: showInfo,
+    setShowInfo: setShowInfo
   };
 };
 

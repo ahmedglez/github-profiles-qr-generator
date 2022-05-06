@@ -1,0 +1,17 @@
+@import './root.scss';
+
+
+
+.avatar-container {
+    width: 30%;
+    min-width: 390px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.avatar-container img {
+    width: 100%;
+    border-radius: 50%;
+}
