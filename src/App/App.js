@@ -3,7 +3,6 @@ import "../styles/App.css"
 import Home from "../pages/Home"
 import AppContext from "../contexts/AppContext"
 import useGetUsers from "../hooks/useGetUsers"
-import UserInfo from "../pages/UserInfo"
 
 const App = () => {
 	const usersApi = useGetUsers()
