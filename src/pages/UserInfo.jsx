@@ -5,7 +5,7 @@ import TitleComponent from '../components/TitleComponent';
 import AvatarPicture from '../components/AvatarPicture';
 import InformationContainer from '../containers/InformationContainer';
 
-const UserInfo = (props) => {
+const UserInfo = () => {
 	const { user } = useContext(AppContext);
 
 	return (
