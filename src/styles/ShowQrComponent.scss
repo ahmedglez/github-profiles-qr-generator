@@ -2,8 +2,7 @@
 
 
 .main-container {
-    width: 20%;
-    min-width: 390px;
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,13 +23,17 @@
 
 }
 
-.button-container{
+.button-container {
     margin-top: 20px;
-    width: 40% ;
-    min-width: 250px;
-    
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+
+
+
 }
-.button-container button{
+
+.button-container button {
     width: 100%;
     font-family: $general-font;
     color: $text-color;
@@ -42,15 +45,15 @@
     transition-duration: 250ms;
     cursor: pointer;
 }
-.button-container button:hover{
-    box-shadow: 2px -36px 45px -26px rgba(29,28,28,0.82) inset;
-    -webkit-box-shadow: 2px -36px 45px -26px rgba(29,28,28,0.82) inset;
-    -moz-box-shadow: 2px -36px 45px -26px rgba(29,28,28,0.82) inset;
+
+.button-container button:hover {
+    box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
+    -webkit-box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
+    -moz-box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
 }
 
 .more-info {
-    width: 15%;
-    min-width: 200px;    
+    width: 50%;
     text-align: center;
     font-size: $small-size;
     font-weight: bold;
@@ -62,19 +65,22 @@
     transition-duration: 200ms;
 
 }
-.down-arrow{
+
+.down-arrow {
     transition-duration: 200ms;
 }
-.more-info:hover > p{
+
+.more-info:hover>p {
     color: white;
 }
-.more-info:hover > .down-arrow{
-    transform: translateY(3px);  
+
+.more-info:hover>.down-arrow {
+    transform: translateY(3px);
     color: white;
-      
+
 }
 
 
-#error-message{
+#error-message {
     color: rgb(181, 12, 12);
 }
