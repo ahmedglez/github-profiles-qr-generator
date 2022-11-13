@@ -3,7 +3,7 @@
 Provide a QR code with the link to your github profile
 
 # Link to app
-https://github-profiles-qr-generator.web.app/
+https://github-profiles-qr-generator-i22239gfl-ahmedglez.vercel.app/
 
 # Description
 Application made with react.js, in which just by typing your username it gives you a QR code to share the profile link with your friends and other developers, it also provides additional information about your account.
