@@ -1,79 +1,79 @@
 /* Text */
 /* Backgrounds */
 .main-container {
-  width: 20%;
-  min-width: 390px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
+	width: 20%;
+	min-width: 390px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
 }
 
 .qr-container {
-  margin: 0 auto;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 20px;
+	margin: 0 auto;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 20px;
 }
 
 .qr-container img {
-  width: 100%;
-  min-width: 390px;
+	width: 100%;
+	display: block;
 }
 
 .button-container {
-  margin-top: 20px;
-  width: 40%;
-  min-width: 250px;
+	margin-top: 20px;
+	width: 40%;
+	min-width: 250px;
 }
 
 .button-container button {
-  width: 100%;
-  font-family: monospace;
-  color: #BABABA;
-  font-size: 26px;
-  background-color: #0a590a;
-  border-radius: 10px;
-  border: none;
-  min-height: 45px;
-  transition-duration: 250ms;
-  cursor: pointer;
+	width: 100%;
+	font-family: monospace;
+	color: #bababa;
+	font-size: 26px;
+	background-color: #0a590a;
+	border-radius: 10px;
+	border: none;
+	min-height: 45px;
+	transition-duration: 250ms;
+	cursor: pointer;
 }
 
 .button-container button:hover {
-  box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
-  -webkit-box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
-  -moz-box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
+	box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
+	-webkit-box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
+	-moz-box-shadow: 2px -36px 45px -26px rgba(29, 28, 28, 0.82) inset;
 }
 
 .more-info {
-  width: 15%;
-  min-width: 200px;
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
+	width: 15%;
+	min-width: 200px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 .more-info p {
-  margin-bottom: -5px;
-  transition-duration: 200ms;
+	margin-bottom: -5px;
+	transition-duration: 200ms;
 }
 
 .down-arrow {
-  transition-duration: 200ms;
+	transition-duration: 200ms;
 }
 
 .more-info:hover > p {
-  color: white;
+	color: white;
 }
 
 .more-info:hover > .down-arrow {
-  transform: translateY(3px);
-  color: white;
+	transform: translateY(3px);
+	color: white;
 }
 
 #error-message {
-  color: #b50c0c;
+	color: #b50c0c;
 }

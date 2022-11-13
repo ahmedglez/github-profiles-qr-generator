@@ -3,8 +3,7 @@
 
 
 .avatar-container {
-    width: 30%;
-    min-width: 390px;
+    width: 95%;
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 20px;
@@ -13,5 +12,6 @@
 
 .avatar-container img {
     width: 100%;
+    display: block;
     border-radius: 50%;
 }
