@@ -2,9 +2,10 @@
 /* Backgrounds */
 .home-container {
   width: 100%;
+  min-width: 400px;
   height: 100%;
-  min-height: 900px;
   background: #0D1117;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;

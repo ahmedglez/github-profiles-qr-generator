@@ -1,13 +1,11 @@
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = require("react");
 
 var _apis = require("../apis/apis");
 
@@ -16,10 +14,6 @@ var _axios = _interopRequireDefault(require("axios"));
 var _useGetQR = _interopRequireDefault(require("./useGetQR"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -35,7 +29,7 @@ var useGetUsers = function useGetUsers() {
       user = _useState2[0],
       setUser = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(user === undefined),
+  var _useState3 = (0, _react.useState)(),
       _useState4 = _slicedToArray(_useState3, 2),
       valid = _useState4[0],
       setValid = _useState4[1];
@@ -50,6 +44,11 @@ var useGetUsers = function useGetUsers() {
       code = _useState8[0],
       setCode = _useState8[1];
 
+  var _useState9 = (0, _react.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      showInfo = _useState10[0],
+      setShowInfo = _useState10[1];
+
   var getCode = function getCode() {
     if (user !== undefined) {
       // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -60,27 +59,40 @@ var useGetUsers = function useGetUsers() {
   };
 
   (0, _react.useEffect)(getCode, [user]);
+  (0, _react.useEffect)(getCode, [user, valid]);
+  (0, _react.useEffect)(function () {
+    if (searchValue === '') {
+      setValid(true);
+      setUser(undefined);
+    }
+  }, [searchValue]);
 
   var lookForUser = function lookForUser(username) {
-    console.log(username);
     var api = _apis.github_users + '/' + username;
-    console.log(api);
-    console.log(_apis.github_users);
 
-    function getUser(username) {
-      var myUser;
+    function getUser() {
+      var response;
       return regeneratorRuntime.async(function getUser$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return regeneratorRuntime.awrap((0, _axios["default"])(api));
+              return regeneratorRuntime.awrap((0, _axios["default"])(api).then(function (response) {
+                setUser(response.data);
+
+                if (response.request.status === 200) {
+                  setValid(true);
+                } else if (response === undefined) {
+                  setValid(false);
+                }
+              })["catch"](function (response) {
+                setValid(false);
+              }));
 
             case 2:
-              myUser = _context.sent;
-              setUser(myUser.data);
+              response = _context.sent;
 
-            case 4:
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -95,11 +107,14 @@ var useGetUsers = function useGetUsers() {
     user: user,
     setUser: setUser,
     valid: valid,
+    setValid: setValid,
     lookForUser: lookForUser,
     searchValue: searchValue,
     setSearchValue: setSearchValue,
     code: code,
-    getCode: getCode
+    getCode: getCode,
+    showInfo: showInfo,
+    setShowInfo: setShowInfo
   };
 };
 

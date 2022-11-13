@@ -1,14 +1,15 @@
 /* Text */
 /* Backgrounds */
 .title-container {
-  min-width: 283px;
-  font-size: 1.2em;
+  min-width: 253px;
+  font-size: 1.1em;
   color: #dadada;
   margin-top: 20px;
+  font-family: monospace;
 }
 
 @media screen and (max-width: 423px) {
   .title-container {
-    font-size: 0.99em;
+    font-size: 0.95em;
   }
 }

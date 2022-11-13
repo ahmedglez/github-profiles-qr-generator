@@ -8,9 +8,9 @@ import '../styles/Home.scss';
 const Home = (props) => {
 	return (
 		<div className='home-container'>
-			<TitleComponent />
+			<TitleComponent text={'QR Generator for Github Profiles'} />
 			<DescriptionComponent />
-      <InputComponent/>
+			<InputComponent />
 			<ShowQrComponent />
 		</div>
 	);

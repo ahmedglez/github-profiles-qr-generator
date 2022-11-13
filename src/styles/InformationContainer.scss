@@ -1,0 +1,12 @@
+@import './root.scss';
+
+
+.information-container{
+    width: 100%;
+    min-width: 480px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}

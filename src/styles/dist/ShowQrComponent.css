@@ -10,6 +10,7 @@
 }
 
 .qr-container {
+  margin: 0 auto;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,6 +19,7 @@
 
 .qr-container img {
   width: 100%;
+  min-width: 390px;
 }
 
 .button-container {
@@ -30,7 +32,7 @@
   width: 100%;
   font-family: monospace;
   color: #BABABA;
-  font-size: 28px;
+  font-size: 26px;
   background-color: #0a590a;
   border-radius: 10px;
   border: none;
@@ -49,7 +51,7 @@
   width: 15%;
   min-width: 200px;
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -70,4 +72,8 @@
 .more-info:hover > .down-arrow {
   transform: translateY(3px);
   color: white;
+}
+
+#error-message {
+  color: #b50c0c;
 }
